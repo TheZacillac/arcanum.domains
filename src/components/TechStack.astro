@@ -1,0 +1,139 @@
+---
+const highlights = [
+  {
+    label: 'Rust',
+    detail: 'Performance-critical cores compiled to native speed with zero-cost abstractions',
+    accent: '#e8562a',
+  },
+  {
+    label: 'Python',
+    detail: 'Orchestration layer with PyO3 bindings, FastAPI servers, and LangGraph agents',
+    accent: '#4b8bbe',
+  },
+  {
+    label: 'MCP',
+    detail: 'Model Context Protocol for seamless AI assistant integration via stdio transport',
+    accent: 'var(--tower)',
+  },
+  {
+    label: 'Tokio',
+    detail: 'Asynchronous runtime powering concurrent DNS queries and bulk operations',
+    accent: '#00b4d8',
+  },
+  {
+    label: 'LangGraph',
+    detail: 'Deep Agents framework for planning, delegation, and long-conversation context',
+    accent: 'var(--familiar)',
+  },
+  {
+    label: 'SQLite',
+    detail: 'Embedded reference database for TLD, record type, and terminology data',
+    accent: 'var(--tome)',
+  },
+];
+---
+
+<section class="tech" id="tech">
+  <div class="container">
+    <h2 class="section-title reveal">Built With</h2>
+    <hr class="section-rule reveal" />
+    <p class="section-subtitle reveal">
+      Rust for speed. Python for reach. Protocols for intelligence.
+    </p>
+
+    <div class="tech-grid">
+      {highlights.map((h, i) => (
+        <div
+          class={`tech-item reveal reveal-delay-${i + 1}`}
+          style={`--accent: ${h.accent};`}
+        >
+          <span class="tech-label">{h.label}</span>
+          <p class="tech-detail">{h.detail}</p>
+        </div>
+      ))}
+    </div>
+
+    <div class="tech-badges reveal">
+      {['PyO3', 'FastAPI', 'Pydantic', 'Hickory DNS', 'Reqwest', 'Serde', 'Clap', 'Hatchling', 'MCP SDK', 'Ollama', 'LangSmith'].map((badge) => (
+        <span class="tech-badge">{badge}</span>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .tech {
+    padding: 8rem 2rem;
+    background:
+      radial-gradient(ellipse 50% 50% at 70% 50%, rgba(17, 17, 51, 0.3), transparent),
+      var(--void);
+  }
+
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1px;
+    max-width: 960px;
+    margin: 0 auto 3rem;
+    background: var(--border);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+  }
+
+  .tech-item {
+    padding: 1.75rem 1.5rem;
+    background: var(--abyss);
+    transition: background 0.4s ease;
+  }
+
+  .tech-item:hover {
+    background: var(--deep);
+  }
+
+  .tech-label {
+    font-family: var(--font-heading);
+    font-size: 1.15rem;
+    letter-spacing: 0.08em;
+    color: var(--accent, var(--text-bright));
+  }
+
+  .tech-detail {
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: var(--text-dim);
+  }
+
+  /* --- Badge Cloud --- */
+  .tech-badges {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .tech-badge {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.04em;
+    padding: 0.3rem 0.8rem;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+
+  .tech-badge:hover {
+    color: var(--gold);
+    border-color: var(--gold-dim);
+  }
+
+  @media (max-width: 640px) {
+    .tech-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

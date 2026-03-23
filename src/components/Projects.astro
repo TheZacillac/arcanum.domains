@@ -1,0 +1,363 @@
+---
+const projects = [
+  {
+    name: 'Seer',
+    subtitle: 'Domain Diagnostics',
+    color: 'var(--seer)',
+    description: 'Multi-interface domain intelligence toolkit providing WHOIS and RDAP lookups, DNS resolution and propagation monitoring, domain health checks, and high-concurrency bulk operations.',
+    features: ['13 DNS record types', '29 global nameservers', 'DNSSEC validation', 'SSL chain inspection', 'CT log enumeration', 'Bulk ops (50 concurrent)'],
+    interfaces: ['CLI', 'Rust library', 'Python library', 'REST API', 'MCP server'],
+    tech: ['Rust', 'PyO3', 'Tokio', 'FastAPI'],
+    icon: 'seer',
+  },
+  {
+    name: 'Tome',
+    subtitle: 'Domain Knowledge Base',
+    color: 'var(--tome)',
+    description: 'Comprehensive reference database covering every internet TLD, all DNS record types with RFC references and examples, and a glossary of domain industry terminology.',
+    features: ['Full TLD database', 'DNS record definitions', 'RFC references', 'Industry glossary', 'Cross-database search', 'Multiple output formats'],
+    interfaces: ['CLI', 'Rust library', 'Python library', 'REST API', 'MCP server'],
+    tech: ['Rust', 'SQLite', 'PyO3', 'FastAPI'],
+    icon: 'tome',
+  },
+  {
+    name: 'Tower',
+    subtitle: 'Unified MCP Server',
+    color: 'var(--tower)',
+    description: 'Consolidates Seer and Tome into a single Model Context Protocol server exposing 19 tools through one entry point for AI assistants like Claude.',
+    features: ['19 unified tools', '13 from Seer + 6 from Tome', 'stdio transport', 'Claude Desktop support', 'Claude Code support', 'Modular dispatch'],
+    interfaces: ['MCP server'],
+    tech: ['Python', 'MCP SDK', 'Hatchling'],
+    icon: 'tower',
+  },
+  {
+    name: 'Scrolls',
+    subtitle: 'AI Agent Skills',
+    color: 'var(--scrolls)',
+    description: 'Skill definitions and reference documentation that give AI agents deep contextual knowledge about domain intelligence tools. Automatically bundled with Tower.',
+    features: ['Skill definitions', 'CLI references', 'API documentation', 'Python binding guides', 'Configuration examples', 'Programmatic access'],
+    interfaces: ['Python library'],
+    tech: ['Python', 'Markdown', 'Hatchling'],
+    icon: 'scrolls',
+  },
+  {
+    name: 'Familiar',
+    subtitle: 'Conversational AI Agent',
+    color: 'var(--familiar)',
+    description: 'Natural language interface to domain intelligence built on LangGraph Deep Agents. Ask questions, investigate domains, and explore DNS in plain English.',
+    features: ['Natural language queries', 'Multi-LLM support', 'Interactive mode', 'Single-query mode', 'LangSmith tracing', 'Context management'],
+    interfaces: ['CLI'],
+    tech: ['Python', 'LangGraph', 'Deep Agents'],
+    icon: 'familiar',
+  },
+];
+---
+
+<section class="projects" id="projects">
+  <div class="container">
+    <h2 class="section-title reveal">The Suite</h2>
+    <hr class="section-rule reveal" />
+    <p class="section-subtitle reveal">
+      Five tools, each with a distinct purpose, working in concert.
+    </p>
+
+    <div class="projects-grid">
+      {projects.map((project, i) => (
+        <article
+          class={`project-card reveal reveal-delay-${i + 1}`}
+          style={`--accent: ${project.color};`}
+        >
+          <div class="card-icon-wrap">
+            {project.icon === 'seer' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <circle cx="32" cy="32" r="14" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="32" cy="32" r="5" fill="currentColor" opacity="0.6" />
+                <path d="M6 32 C6 32 18 14 32 14 C46 14 58 32 58 32 C58 32 46 50 32 50 C18 50 6 32 6 32Z" stroke="currentColor" stroke-width="1.5" />
+                <line x1="32" y1="4" x2="32" y2="14" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="32" y1="50" x2="32" y2="60" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="4" y1="32" x2="14" y2="32" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="50" y1="32" x2="60" y2="32" stroke="currentColor" stroke-width="1" opacity="0.4" />
+              </svg>
+            )}
+            {project.icon === 'tome' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M12 8 L12 56 Q12 58 14 58 L50 58 Q52 58 52 56 L52 12 Q52 10 50 10 L16 10" stroke="currentColor" stroke-width="1.5" fill="none" />
+                <path d="M12 52 L12 56 Q12 58 14 58 L50 58" stroke="currentColor" stroke-width="2" />
+                <line x1="12" y1="52" x2="50" y2="52" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <path d="M16 8 Q12 8 12 12" stroke="currentColor" stroke-width="1.5" />
+                <line x1="20" y1="18" x2="44" y2="18" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="20" y1="24" x2="44" y2="24" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="20" y1="30" x2="36" y2="30" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <circle cx="32" cy="42" r="5" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <circle cx="32" cy="42" r="1.5" fill="currentColor" opacity="0.4" />
+              </svg>
+            )}
+            {project.icon === 'tower' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M24 58 L24 22 L20 22 L32 6 L44 22 L40 22 L40 58" stroke="currentColor" stroke-width="1.5" />
+                <line x1="24" y1="32" x2="40" y2="32" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <line x1="24" y1="42" x2="40" y2="42" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <rect x="29" y="48" width="6" height="10" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <circle cx="32" cy="27" r="3" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                <line x1="14" y1="58" x2="50" y2="58" stroke="currentColor" stroke-width="1.5" />
+                <line x1="10" y1="32" x2="20" y2="32" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-dasharray="2 3" />
+                <line x1="44" y1="32" x2="54" y2="32" stroke="currentColor" stroke-width="1" opacity="0.3" stroke-dasharray="2 3" />
+              </svg>
+            )}
+            {project.icon === 'scrolls' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M18 10 Q14 10 14 14 L14 46 Q14 52 20 52 L44 52" stroke="currentColor" stroke-width="1.5" />
+                <path d="M44 52 Q50 52 50 46 L50 18 Q50 14 46 14 L18 14" stroke="currentColor" stroke-width="1.5" />
+                <path d="M14 46 Q14 52 20 52" stroke="currentColor" stroke-width="2" />
+                <circle cx="18" cy="10" r="4" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="44" cy="52" r="4" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <line x1="22" y1="22" x2="42" y2="22" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="22" y1="28" x2="42" y2="28" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="22" y1="34" x2="38" y2="34" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="22" y1="40" x2="34" y2="40" stroke="currentColor" stroke-width="1" opacity="0.4" />
+              </svg>
+            )}
+            {project.icon === 'familiar' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8 Q22 18 22 30 Q22 42 32 52 Q42 42 42 30 Q42 18 32 8Z" stroke="currentColor" stroke-width="1.5" />
+                <circle cx="32" cy="28" r="6" stroke="currentColor" stroke-width="1" opacity="0.6" />
+                <circle cx="32" cy="28" r="2" fill="currentColor" opacity="0.5" />
+                <path d="M22 38 Q16 42 12 38" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <path d="M42 38 Q48 42 52 38" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <path d="M26 48 Q22 54 18 56" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <path d="M38 48 Q42 54 46 56" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <circle cx="32" cy="28" r="16" stroke="currentColor" stroke-width="0.5" opacity="0.2" stroke-dasharray="3 4" />
+              </svg>
+            )}
+          </div>
+
+          <div class="card-content">
+            <h3 class="card-name">{project.name}</h3>
+            <span class="card-subtitle">{project.subtitle}</span>
+            <p class="card-description">{project.description}</p>
+
+            <div class="card-features">
+              {project.features.map((f) => (
+                <span class="card-feature">{f}</span>
+              ))}
+            </div>
+
+            <div class="card-footer">
+              <div class="card-interfaces">
+                {project.interfaces.map((iface) => (
+                  <span class="card-interface">{iface}</span>
+                ))}
+              </div>
+              <div class="card-tech">
+                {project.tech.map((t) => (
+                  <span class="card-tech-badge">{t}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .projects {
+    padding: 8rem 2rem;
+    background:
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(17, 17, 51, 0.5), transparent),
+      var(--void);
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  /* --- Card --- */
+  .project-card {
+    position: relative;
+    background: linear-gradient(135deg, rgba(12, 12, 36, 0.8), rgba(8, 8, 26, 0.9));
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 2.5rem 2rem 2rem;
+    transition: all 0.5s var(--ease-out-expo);
+    overflow: hidden;
+  }
+
+  .project-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--accent), transparent);
+    opacity: 0.6;
+    transition: opacity 0.4s ease;
+  }
+
+  .project-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, var(--accent), transparent 70%);
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .project-card:hover {
+    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    transform: translateY(-4px);
+  }
+
+  .project-card:hover::before {
+    opacity: 1;
+  }
+
+  .project-card:hover::after {
+    opacity: 0.04;
+  }
+
+  /* --- Icon --- */
+  .card-icon-wrap {
+    position: relative;
+    z-index: 1;
+    margin-bottom: 1.5rem;
+  }
+
+  .card-icon {
+    width: 48px;
+    height: 48px;
+    color: var(--accent);
+    transition: transform 0.4s var(--ease-out-back), filter 0.4s ease;
+    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 30%, transparent));
+  }
+
+  .project-card:hover .card-icon {
+    transform: scale(1.1);
+    filter: drop-shadow(0 0 16px color-mix(in srgb, var(--accent) 50%, transparent));
+  }
+
+  /* --- Content --- */
+  .card-content {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card-name {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    letter-spacing: 0.1em;
+    color: var(--text-bright);
+  }
+
+  .card-subtitle {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    color: var(--accent);
+    margin-top: 0.25rem;
+    text-transform: uppercase;
+    opacity: 0.8;
+  }
+
+  .card-description {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.7;
+    color: var(--text);
+  }
+
+  /* --- Features --- */
+  .card-features {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 1.25rem;
+  }
+
+  .card-feature {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.02em;
+    padding: 0.25rem 0.6rem;
+    color: var(--text-dim);
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    transition: border-color 0.3s ease, color 0.3s ease;
+  }
+
+  .project-card:hover .card-feature {
+    border-color: color-mix(in srgb, var(--accent) 25%, transparent);
+    color: var(--text);
+  }
+
+  /* --- Footer --- */
+  .card-footer {
+    margin-top: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid var(--border);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 0.75rem;
+  }
+
+  .card-interfaces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .card-interface {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--text-dim);
+    opacity: 0.7;
+  }
+
+  .card-interface:not(:last-child)::after {
+    content: '·';
+    margin-left: 0.3rem;
+    opacity: 0.4;
+  }
+
+  .card-tech {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+  }
+
+  .card-tech-badge {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.04em;
+    padding: 0.15rem 0.5rem;
+    color: var(--accent);
+    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
+    border-radius: 2px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+  }
+
+  .project-card:hover .card-tech-badge {
+    opacity: 1;
+  }
+
+  /* --- Responsive --- */
+  @media (max-width: 720px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

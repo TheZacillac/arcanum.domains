@@ -1,0 +1,109 @@
+---
+---
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer-sigil">
+      <svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" class="footer-icon">
+        <circle cx="20" cy="20" r="18" fill="none" stroke="currentColor" stroke-width="0.5" />
+        <circle cx="20" cy="20" r="10" fill="none" stroke="currentColor" stroke-width="0.5" />
+        <line x1="20" y1="2" x2="20" y2="38" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+        <line x1="2" y1="20" x2="38" y2="20" stroke="currentColor" stroke-width="0.5" opacity="0.5" />
+        <circle cx="20" cy="20" r="2" fill="currentColor" opacity="0.4" />
+      </svg>
+    </div>
+
+    <span class="footer-name">Arcanum</span>
+
+    <p class="footer-tagline">Domain intelligence, unified.</p>
+
+    <nav class="footer-nav">
+      <a href="#hero">Top</a>
+      <span class="footer-sep">/</span>
+      <a href="#projects">Suite</a>
+      <span class="footer-sep">/</span>
+      <a href="#architecture">Architecture</a>
+      <span class="footer-sep">/</span>
+      <a href="#tech">Tech</a>
+    </nav>
+
+    <p class="footer-copy">
+      <span class="footer-copy-symbol">&#9670;</span>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .footer {
+    padding: 4rem 2rem 3rem;
+    border-top: 1px solid var(--border);
+    background: var(--void);
+    text-align: center;
+  }
+
+  .footer-sigil {
+    margin-bottom: 1.25rem;
+  }
+
+  .footer-icon {
+    width: 32px;
+    height: 32px;
+    color: var(--gold-dim);
+    opacity: 0.5;
+  }
+
+  .footer-name {
+    display: block;
+    font-family: var(--font-display);
+    font-size: 1rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold-dim);
+  }
+
+  .footer-tagline {
+    margin-top: 0.35rem;
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+    color: var(--text-dim);
+    text-transform: uppercase;
+  }
+
+  .footer-nav {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-nav a {
+    font-family: var(--font-mono);
+    font-size: 0.65rem;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    transition: color 0.3s ease;
+  }
+
+  .footer-nav a:hover {
+    color: var(--gold);
+  }
+
+  .footer-sep {
+    color: var(--border);
+    font-size: 0.6rem;
+  }
+
+  .footer-copy {
+    margin-top: 2rem;
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    opacity: 0.3;
+  }
+
+  .footer-copy-symbol {
+    font-size: 0.5rem;
+  }
+</style>
