@@ -165,7 +165,7 @@ const projects = [
   .projects {
     padding: 8rem 2rem;
     background:
-      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(17, 17, 51, 0.5), transparent),
+      radial-gradient(ellipse 80% 50% at 50% 0%, rgba(30, 16, 64, 0.5), transparent),
       var(--void);
   }
 
@@ -180,9 +180,9 @@ const projects = [
   /* --- Card --- */
   .project-card {
     position: relative;
-    background: linear-gradient(135deg, rgba(12, 12, 36, 0.8), rgba(8, 8, 26, 0.9));
+    background: linear-gradient(135deg, rgba(22, 10, 48, 0.85), rgba(14, 5, 32, 0.95));
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 0;
     padding: 2.5rem 2rem 2rem;
     transition: all 0.5s var(--ease-out-expo);
     overflow: hidden;
@@ -196,8 +196,9 @@ const projects = [
     right: 0;
     height: 2px;
     background: linear-gradient(90deg, transparent, var(--accent), transparent);
-    opacity: 0.6;
+    opacity: 0.8;
     transition: opacity 0.4s ease;
+    box-shadow: 0 0 15px color-mix(in srgb, var(--accent) 40%, transparent);
   }
 
   .project-card::after {
@@ -212,16 +213,18 @@ const projects = [
   }
 
   .project-card:hover {
-    border-color: color-mix(in srgb, var(--accent) 40%, transparent);
+    border-color: color-mix(in srgb, var(--accent) 50%, transparent);
     transform: translateY(-4px);
+    box-shadow: 0 0 30px color-mix(in srgb, var(--accent) 15%, transparent);
   }
 
   .project-card:hover::before {
     opacity: 1;
+    box-shadow: 0 0 25px color-mix(in srgb, var(--accent) 60%, transparent);
   }
 
   .project-card:hover::after {
-    opacity: 0.04;
+    opacity: 0.06;
   }
 
   /* --- Icon --- */
@@ -236,12 +239,12 @@ const projects = [
     height: 48px;
     color: var(--accent);
     transition: transform 0.4s var(--ease-out-back), filter 0.4s ease;
-    filter: drop-shadow(0 0 8px color-mix(in srgb, var(--accent) 30%, transparent));
+    filter: drop-shadow(0 0 12px color-mix(in srgb, var(--accent) 50%, transparent));
   }
 
   .project-card:hover .card-icon {
-    transform: scale(1.1);
-    filter: drop-shadow(0 0 16px color-mix(in srgb, var(--accent) 50%, transparent));
+    transform: scale(1.15);
+    filter: drop-shadow(0 0 24px color-mix(in srgb, var(--accent) 70%, transparent));
   }
 
   /* --- Content --- */
@@ -260,12 +263,13 @@ const projects = [
   .card-subtitle {
     display: block;
     font-family: var(--font-mono);
-    font-size: 0.75rem;
+    font-size: 0.95rem;
     letter-spacing: 0.08em;
     color: var(--accent);
     margin-top: 0.25rem;
     text-transform: uppercase;
     opacity: 0.8;
+    text-shadow: 0 0 8px color-mix(in srgb, var(--accent) 30%, transparent);
   }
 
   .card-description {
@@ -285,12 +289,12 @@ const projects = [
 
   .card-feature {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     letter-spacing: 0.02em;
-    padding: 0.25rem 0.6rem;
+    padding: 0.2rem 0.6rem;
     color: var(--text-dim);
     border: 1px solid var(--border);
-    border-radius: 2px;
+    border-radius: 0;
     transition: border-color 0.3s ease, color 0.3s ease;
   }
 
@@ -319,7 +323,7 @@ const projects = [
 
   .card-interface {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     text-transform: uppercase;
     letter-spacing: 0.06em;
     color: var(--text-dim);
@@ -340,14 +344,14 @@ const projects = [
 
   .card-tech-badge {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     letter-spacing: 0.04em;
-    padding: 0.15rem 0.5rem;
+    padding: 0.1rem 0.5rem;
     color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 25%, transparent);
-    border-radius: 2px;
+    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
+    border-radius: 0;
     opacity: 0.7;
-    transition: opacity 0.3s ease;
+    transition: opacity 0.3s ease, box-shadow 0.3s ease;
   }
 
   .project-card:hover .card-tech-badge {

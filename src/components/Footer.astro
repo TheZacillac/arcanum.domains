@@ -48,8 +48,9 @@
   .footer-icon {
     width: 32px;
     height: 32px;
-    color: var(--gold-dim);
+    color: var(--neon-purple);
     opacity: 0.5;
+    filter: drop-shadow(0 0 6px rgba(199, 125, 255, 0.3));
   }
 
   .footer-name {
@@ -58,13 +59,14 @@
     font-size: 1rem;
     letter-spacing: 0.25em;
     text-transform: uppercase;
-    color: var(--gold-dim);
+    color: var(--gold);
+    text-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
   }
 
   .footer-tagline {
     margin-top: 0.35rem;
     font-family: var(--font-mono);
-    font-size: 0.7rem;
+    font-size: 0.9rem;
     letter-spacing: 0.08em;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -80,15 +82,16 @@
 
   .footer-nav a {
     font-family: var(--font-mono);
-    font-size: 0.65rem;
+    font-size: 0.85rem;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--text-dim);
-    transition: color 0.3s ease;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
   }
 
   .footer-nav a:hover {
-    color: var(--gold);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 8px rgba(0, 229, 255, 0.4);
   }
 
   .footer-sep {

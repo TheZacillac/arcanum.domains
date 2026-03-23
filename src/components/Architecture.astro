@@ -114,8 +114,8 @@
   .architecture {
     padding: 8rem 2rem;
     background:
-      radial-gradient(ellipse 60% 40% at 30% 80%, rgba(42, 22, 80, 0.15), transparent),
-      radial-gradient(ellipse 60% 40% at 70% 20%, rgba(17, 17, 51, 0.3), transparent),
+      radial-gradient(ellipse 60% 40% at 30% 80%, rgba(42, 22, 80, 0.25), transparent),
+      radial-gradient(ellipse 60% 40% at 70% 20%, rgba(30, 16, 64, 0.4), transparent),
       var(--void);
   }
 
@@ -164,19 +164,20 @@
   }
 
   .arch-line {
-    stroke: var(--gold-dim);
+    stroke: var(--neon-purple);
     stroke-width: 1;
-    opacity: 0.35;
+    opacity: 0.4;
   }
 
   .arch-line.dashed {
+    stroke: var(--neon-pink);
     stroke-dasharray: 6 4;
-    opacity: 0.25;
+    opacity: 0.3;
   }
 
   .arch-line.thin {
     stroke-width: 0.5;
-    opacity: 0.15;
+    opacity: 0.2;
   }
 
   /* --- Nodes --- */
@@ -193,17 +194,18 @@
     align-items: center;
     gap: 0.25rem;
     padding: 0.75rem 1.5rem;
-    background: rgba(8, 8, 26, 0.9);
+    background: rgba(14, 5, 32, 0.9);
     border: 1px solid var(--border);
-    border-radius: 4px;
+    border-radius: 0;
     transition: all 0.4s ease;
     cursor: default;
   }
 
   .arch-node:hover {
-    border-color: var(--accent, var(--gold-dim));
-    background: rgba(12, 12, 36, 0.95);
+    border-color: var(--accent, var(--neon-purple));
+    background: rgba(22, 10, 48, 0.95);
     transform: scale(1.05);
+    box-shadow: 0 0 20px color-mix(in srgb, var(--accent, var(--neon-purple)) 25%, transparent);
   }
 
   /* Position nodes on grid */
@@ -242,8 +244,8 @@
     width: 6px;
     height: 6px;
     border-radius: 50%;
-    background: var(--pip-color, var(--gold));
-    box-shadow: 0 0 8px var(--pip-color, var(--gold));
+    background: var(--pip-color, var(--neon-cyan));
+    box-shadow: 0 0 12px var(--pip-color, var(--neon-cyan)), 0 0 24px color-mix(in srgb, var(--pip-color, var(--neon-cyan)) 50%, transparent);
     margin-bottom: 0.15rem;
   }
 
@@ -256,7 +258,7 @@
 
   .arch-node-desc {
     font-family: var(--font-mono);
-    font-size: 0.6rem;
+    font-size: 0.8rem;
     letter-spacing: 0.04em;
     color: var(--text-dim);
     text-transform: uppercase;
@@ -295,12 +297,12 @@
     display: block;
     width: 24px;
     height: 1px;
-    background: var(--gold-dim);
+    background: var(--neon-purple);
   }
 
   .arch-legend-line.dashed {
     background: none;
-    border-top: 1px dashed var(--gold-dim);
+    border-top: 1px dashed var(--neon-pink);
   }
 
   /* --- Flow Description --- */
