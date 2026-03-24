@@ -16,8 +16,16 @@ const {
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content={description} />
+    <link rel="canonical" href="https://arcanum.domains/" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://arcanum.domains/" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
     <title>{title}</title>
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔮</text></svg>" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
   </head>
   <body>
     <slot />
@@ -29,6 +37,7 @@ const {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
             }
           });
         },
@@ -36,15 +45,6 @@ const {
       );
 
       document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-      // Smooth anchor scrolling
-      document.querySelectorAll('a[href^="#"]').forEach((link) => {
-        link.addEventListener('click', (e) => {
-          e.preventDefault();
-          const target = document.querySelector(link.getAttribute('href')!);
-          target?.scrollIntoView({ behavior: 'smooth' });
-        });
-      });
     </script>
   </body>
 </html>
