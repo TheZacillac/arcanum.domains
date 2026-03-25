@@ -22,7 +22,7 @@ arcanum.domains/
     │   └── Layout.astro     # Root HTML, intersection observer, smooth scrolling
     ├── components/
     │   ├── Hero.astro       # Landing: animated SVG sigil, CTAs, synthwave grid
-    │   ├── Projects.astro   # Five project cards with features and links
+    │   ├── Projects.astro   # Six project cards with features and links
     │   ├── Architecture.astro  # Three-layer dependency diagram (SVG)
     │   ├── TechStack.astro  # Technology highlights grid + badge cloud
     │   └── Footer.astro     # Navigation and branding
@@ -57,13 +57,13 @@ npm run preview   # Preview built site
 
 **Neon accents:** `--gold` (#ffd700), `--neon-pink` (#ff2d95), `--neon-cyan` (#00e5ff), `--neon-purple` (#c77dff)
 
-**Per-tool colors:** `--seer` (cyan), `--tome` (gold), `--tower` (purple), `--scrolls` (neon green), `--familiar` (pink)
+**Per-tool colors:** `--seer` (cyan), `--tome` (gold), `--tower` (purple), `--scrolls` (neon green), `--familiar` (pink), `--oracle` (amber)
 
 ### Visual Effects
 - **CRT scanlines** — repeating 2px horizontal lines over entire page
 - **Starfield** — 15 radial gradients with twinkle animation
 - **Scroll-reveal** — intersection observer adds `.visible` class, CSS transitions handle fade + slide
-- **Staggered delays** — `.reveal-delay-1` through `.reveal-delay-5`
+- **Staggered delays** — `.reveal-delay-1` through `.reveal-delay-6`
 - **Neon glows** — box-shadow and text-shadow with accent colors
 
 ---
@@ -71,7 +71,7 @@ npm run preview   # Preview built site
 ## Page Sections
 
 1. **Hero** — synthwave perspective grid, animated SVG sigil (multi-stage stroke draw + slow rotation), chrome gradient title, two CTAs
-2. **Projects** — data-driven cards for Seer, Tome, Tower, Scrolls, Familiar with SVG icons, feature badges, interface lists, tech stack badges, repo links
+2. **Projects** — data-driven cards for Seer, Tome, Tower, Scrolls, Familiar, Oracle with SVG icons, feature badges, interface lists, tech stack badges, repo links
 3. **Architecture** — SVG connection diagram showing three layers (Core → Integration → Interface)
 4. **TechStack** — 6 technology categories (Rust, Python, MCP, Tokio, LangGraph, SQLite) + badge cloud
 5. **Footer** — mini sigil, navigation links, branding

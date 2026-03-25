@@ -55,6 +55,17 @@ const projects = [
     icon: 'familiar',
     repo: 'https://github.com/TheZacillac/familiar',
   },
+  {
+    name: 'Oracle',
+    subtitle: 'Training Dataset Generator',
+    color: 'var(--oracle)',
+    description: 'Generates expert-grade training datasets across 423 topics and 26 categories to fine-tune LLMs into domain name industry specialists. Combines synthetic generation, RFC extraction, and data augmentation with built-in quality validation.',
+    features: ['423 curated topics', 'RFC extraction', 'Tool-use training', 'Multi-format export', 'Quality validation', 'Difficulty scaling'],
+    interfaces: ['CLI'],
+    tech: ['Python', 'Pydantic', 'tiktoken', 'Click'],
+    icon: 'oracle',
+    repo: 'https://github.com/TheZacillac/oracle',
+  },
 ];
 ---
 
@@ -63,7 +74,7 @@ const projects = [
     <h2 class="section-title reveal">The Suite</h2>
     <hr class="section-rule reveal" />
     <p class="section-subtitle reveal">
-      Five tools, each with a distinct purpose, working in concert.
+      Six projects, each with a distinct purpose, working in concert.
     </p>
 
     <div class="projects-grid">
@@ -132,6 +143,21 @@ const projects = [
                 <path d="M26 48 Q22 54 18 56" stroke="currentColor" stroke-width="1" opacity="0.3" />
                 <path d="M38 48 Q42 54 46 56" stroke="currentColor" stroke-width="1" opacity="0.3" />
                 <circle cx="32" cy="28" r="16" stroke="currentColor" stroke-width="0.5" opacity="0.2" stroke-dasharray="3 4" />
+              </svg>
+            )}
+            {project.icon === 'oracle' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M32 8 L48 24 L32 56 L16 24 Z" stroke="currentColor" stroke-width="1.5" />
+                <line x1="16" y1="24" x2="48" y2="24" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="32" y1="8" x2="32" y2="56" stroke="currentColor" stroke-width="0.5" opacity="0.3" />
+                <line x1="16" y1="24" x2="32" y2="56" stroke="currentColor" stroke-width="0.5" opacity="0.2" />
+                <line x1="48" y1="24" x2="32" y2="56" stroke="currentColor" stroke-width="0.5" opacity="0.2" />
+                <circle cx="32" cy="26" r="4" fill="currentColor" opacity="0.4" />
+                <line x1="32" y1="2" x2="32" y2="8" stroke="currentColor" stroke-width="1" opacity="0.4" />
+                <line x1="22" y1="10" x2="18" y2="5" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <line x1="42" y1="10" x2="46" y2="5" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <line x1="10" y1="24" x2="16" y2="24" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <line x1="48" y1="24" x2="54" y2="24" stroke="currentColor" stroke-width="1" opacity="0.3" />
               </svg>
             )}
           </div>
