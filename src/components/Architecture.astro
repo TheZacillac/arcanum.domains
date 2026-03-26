@@ -20,27 +20,33 @@
       <!-- Connections SVG -->
       <svg class="arch-lines" viewBox="0 0 800 460" preserveAspectRatio="xMidYMid meet" aria-hidden="true">
         <!-- Arcanum to Familiar -->
-        <line x1="400" y1="56" x2="100" y2="160" class="arch-line" />
+        <line x1="400" y1="56" x2="80" y2="160" class="arch-line" />
         <!-- Arcanum to Tower -->
-        <line x1="400" y1="56" x2="300" y2="160" class="arch-line" />
+        <line x1="400" y1="56" x2="240" y2="160" class="arch-line" />
+        <!-- Arcanum to Vessel -->
+        <line x1="400" y1="56" x2="400" y2="160" class="arch-line" />
         <!-- Arcanum to Oracle -->
-        <line x1="400" y1="56" x2="500" y2="160" class="arch-line" />
+        <line x1="400" y1="56" x2="560" y2="160" class="arch-line" />
         <!-- Arcanum to Scrolls -->
-        <line x1="400" y1="56" x2="700" y2="160" class="arch-line" />
+        <line x1="400" y1="56" x2="720" y2="160" class="arch-line" />
         <!-- Familiar to Tower (uses) -->
-        <line x1="100" y1="216" x2="300" y2="216" class="arch-line dashed" />
+        <line x1="80" y1="216" x2="240" y2="216" class="arch-line dashed" />
         <!-- Tower to Seer -->
-        <line x1="300" y1="260" x2="260" y2="340" class="arch-line" />
+        <line x1="240" y1="260" x2="260" y2="340" class="arch-line" />
         <!-- Tower to Tome -->
-        <line x1="300" y1="260" x2="540" y2="340" class="arch-line" />
+        <line x1="240" y1="260" x2="540" y2="340" class="arch-line" />
         <!-- Scrolls to Tower (bundled) -->
-        <line x1="700" y1="216" x2="300" y2="216" class="arch-line dashed" />
+        <line x1="720" y1="216" x2="240" y2="216" class="arch-line dashed" />
         <!-- Familiar to Scrolls (uses) -->
-        <line x1="100" y1="195" x2="700" y2="195" class="arch-line dashed thin" />
+        <line x1="80" y1="195" x2="720" y2="195" class="arch-line dashed thin" />
+        <!-- Oracle produces Vessel training data -->
+        <line x1="560" y1="216" x2="400" y2="216" class="arch-line dashed" />
+        <!-- Vessel powers Familiar -->
+        <line x1="400" y1="195" x2="80" y2="195" class="arch-line dashed thin" />
         <!-- Oracle references Seer tools -->
-        <line x1="500" y1="260" x2="260" y2="340" class="arch-line dashed" />
+        <line x1="560" y1="260" x2="260" y2="340" class="arch-line dashed" />
         <!-- Oracle references Tome tools -->
-        <line x1="500" y1="260" x2="540" y2="340" class="arch-line dashed" />
+        <line x1="560" y1="260" x2="540" y2="340" class="arch-line dashed" />
       </svg>
 
       <!-- Nodes -->
@@ -52,26 +58,32 @@
           <span class="arch-node-desc">Meta-package</span>
         </div>
 
-        <!-- Middle tier: Familiar, Tower, Oracle, Scrolls -->
+        <!-- Middle tier: Familiar, Tower, Vessel, Oracle, Scrolls -->
         <div class="arch-node" style="--col: 1; --row: 2; --accent: var(--familiar);">
           <span class="arch-node-pip" style="--pip-color: var(--familiar);"></span>
           <span class="arch-node-name">Familiar</span>
           <span class="arch-node-desc">AI Agent</span>
         </div>
 
-        <div class="arch-node" style="--col: 3; --row: 2; --accent: var(--tower);">
+        <div class="arch-node" style="--col: 2; --row: 2; --accent: var(--tower);">
           <span class="arch-node-pip" style="--pip-color: var(--tower);"></span>
           <span class="arch-node-name">Tower</span>
-          <span class="arch-node-desc">MCP Server · 19 tools</span>
+          <span class="arch-node-desc">MCP Server · 22 tools</span>
         </div>
 
-        <div class="arch-node" style="--col: 5; --row: 2; --accent: var(--oracle);">
+        <div class="arch-node" style="--col: 3; --row: 2; --accent: var(--vessel);">
+          <span class="arch-node-pip" style="--pip-color: var(--vessel);"></span>
+          <span class="arch-node-name">Vessel</span>
+          <span class="arch-node-desc">Expert LLM</span>
+        </div>
+
+        <div class="arch-node" style="--col: 4; --row: 2; --accent: var(--oracle);">
           <span class="arch-node-pip" style="--pip-color: var(--oracle);"></span>
           <span class="arch-node-name">Oracle</span>
           <span class="arch-node-desc">Training Data</span>
         </div>
 
-        <div class="arch-node" style="--col: 7; --row: 2; --accent: var(--scrolls);">
+        <div class="arch-node" style="--col: 5; --row: 2; --accent: var(--scrolls);">
           <span class="arch-node-pip" style="--pip-color: var(--scrolls);"></span>
           <span class="arch-node-name">Scrolls</span>
           <span class="arch-node-desc">Agent Skills</span>
@@ -87,7 +99,7 @@
         <div class="arch-node" style="--col: 4; --row: 3; --accent: var(--tome);">
           <span class="arch-node-pip" style="--pip-color: var(--tome);"></span>
           <span class="arch-node-name">Tome</span>
-          <span class="arch-node-desc">Rust core · 6 tools</span>
+          <span class="arch-node-desc">Rust core · 9 tools</span>
         </div>
       </div>
     </div>
@@ -112,11 +124,11 @@
       </div>
       <div class="arch-flow-item">
         <span class="arch-flow-num">2</span>
-        <p><strong>Tower</strong> consolidates both cores into a single MCP server. <strong>Scrolls</strong> provides contextual knowledge for AI agents. <strong>Oracle</strong> generates expert training datasets across 423 topics, teaching LLMs to use the suite's tools.</p>
+        <p><strong>Tower</strong> consolidates both cores into a single MCP server. <strong>Scrolls</strong> provides contextual knowledge for AI agents. <strong>Oracle</strong> generates expert training datasets across 423 topics, which feed into <strong>Vessel</strong> — a fine-tuned domain expert LLM.</p>
       </div>
       <div class="arch-flow-item">
         <span class="arch-flow-num">3</span>
-        <p><strong>Familiar</strong> sits at the top — a conversational agent powered by an Oracle-trained model, with 50 tools that leverage Seer, Tome, and Scrolls to answer questions in natural language.</p>
+        <p><strong>Familiar</strong> sits at the top — a conversational agent powered by <strong>Vessel</strong>, with 60 tools that leverage Seer, Tome, and Scrolls to answer questions in natural language.</p>
       </div>
     </div>
   </div>
@@ -225,32 +237,32 @@
     top: 12px; left: 50%; transform: translateX(-50%);
   }
   .arch-node[style*="--row: 2"][style*="--col: 1"] {
-    top: 172px; left: 12.5%; transform: translateX(-50%);
+    top: 172px; left: 10%; transform: translateX(-50%);
+  }
+  .arch-node[style*="--row: 2"][style*="--col: 2"] {
+    top: 172px; left: 30%; transform: translateX(-50%);
   }
   .arch-node[style*="--row: 2"][style*="--col: 3"] {
-    top: 172px; left: 37.5%; transform: translateX(-50%);
+    top: 172px; left: 50%; transform: translateX(-50%);
+  }
+  .arch-node[style*="--row: 2"][style*="--col: 4"] {
+    top: 172px; left: 70%; transform: translateX(-50%);
   }
   .arch-node[style*="--row: 2"][style*="--col: 5"] {
-    top: 172px; left: 62.5%; transform: translateX(-50%);
-  }
-  .arch-node[style*="--row: 2"][style*="--col: 7"] {
-    top: 172px; left: 87.5%; transform: translateX(-50%);
+    top: 172px; left: 90%; transform: translateX(-50%);
   }
   .arch-node[style*="--row: 3"][style*="--col: 2"] {
-    top: 332px; left: 25%; transform: translateX(-50%);
+    top: 332px; left: 32.5%; transform: translateX(-50%);
   }
   .arch-node[style*="--row: 3"][style*="--col: 4"] {
-    top: 332px; right: 25%; transform: translateX(50%);
+    top: 332px; left: 67.5%; transform: translateX(-50%);
   }
 
   /* Hover overrides for translated nodes */
-  .arch-node[style*="--row: 1"][style*="--col: 3"]:hover,
+  .arch-node[style*="--row: 1"]:hover,
   .arch-node[style*="--row: 2"]:hover,
-  .arch-node[style*="--row: 3"][style*="--col: 2"]:hover {
+  .arch-node[style*="--row: 3"]:hover {
     transform: translateX(-50%) scale(1.05);
-  }
-  .arch-node[style*="--row: 3"][style*="--col: 4"]:hover {
-    transform: translateX(50%) scale(1.05);
   }
 
   .arch-node-pip {

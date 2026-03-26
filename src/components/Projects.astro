@@ -15,7 +15,7 @@ const projects = [
     name: 'Tome',
     subtitle: 'Domain Knowledge Base',
     color: 'var(--tome)',
-    description: 'Reference database for internet TLDs, DNS record types with RFC references and examples, and a glossary of domain industry terminology. Data models complete, datasets being populated.',
+    description: 'Reference database for internet TLDs, DNS record types with RFC references and examples, and a glossary of domain industry terminology. Data models complete, datasets not yet populated.',
     features: ['TLD database', 'DNS record definitions', 'RFC references', 'Industry glossary', 'Cross-database search', 'Multiple output formats'],
     interfaces: ['CLI', 'Rust library', 'Python library', 'REST API', 'MCP server'],
     tech: ['Rust', 'SQLite', 'PyO3', 'FastAPI'],
@@ -26,8 +26,8 @@ const projects = [
     name: 'Tower',
     subtitle: 'Unified MCP Server',
     color: 'var(--tower)',
-    description: 'Consolidates Seer and Tome into a single Model Context Protocol server exposing 19 tools through one entry point for AI assistants like Claude.',
-    features: ['19 unified tools', '13 from Seer + 6 from Tome', 'stdio transport', 'Claude Desktop support', 'Claude Code support', 'Modular dispatch'],
+    description: 'Consolidates Seer and Tome into a single Model Context Protocol server exposing 22 tools through one entry point for AI assistants like Claude.',
+    features: ['22 unified tools', '13 from Seer + 9 from Tome', 'stdio transport', 'Claude Desktop support', 'Claude Code support', 'Modular dispatch'],
     interfaces: ['MCP server'],
     tech: ['Python', 'MCP SDK', 'Hatchling'],
     icon: 'tower',
@@ -48,8 +48,8 @@ const projects = [
     name: 'Familiar',
     subtitle: 'Conversational AI Agent',
     color: 'var(--familiar)',
-    description: 'Natural language interface to domain intelligence built on LangGraph Deep Agents. 50 tools for diagnostics, security audits, brand protection, portfolio management, and persistent memory.',
-    features: ['50 integrated tools', 'Security audits', 'Brand protection scans', 'Domain watchlist', 'Multi-LLM support', 'Session memory'],
+    description: 'Natural language interface to domain intelligence built on LangGraph Deep Agents. 60 tools for diagnostics, security audits, penetration testing, brand protection, portfolio management, and persistent memory.',
+    features: ['60 integrated tools', 'Security audits', 'Penetration testing', 'Brand protection scans', 'Multi-LLM support', 'Session memory'],
     interfaces: ['CLI'],
     tech: ['Python', 'LangGraph', 'Deep Agents'],
     icon: 'familiar',
@@ -66,6 +66,18 @@ const projects = [
     icon: 'oracle',
     repo: 'https://github.com/TheZacillac/oracle',
   },
+  {
+    name: 'Vessel',
+    subtitle: 'Domain Expert LLM',
+    color: 'var(--vessel)',
+    description: 'Fine-tuned language model trained on Oracle\'s dataset to become a domain name industry specialist. Built on Nemotron-Nano-8B with reasoning traces, deployable locally via Ollama as a purpose-built domain intelligence engine.',
+    features: ['Nemotron-Nano-8B base', 'Domain industry expertise', 'Tool-use trained', 'Reasoning traces', 'Local deployment', 'Ollama compatible'],
+    interfaces: ['Model weights', 'Ollama'],
+    tech: ['Unsloth', 'LoRA', 'Nemotron'],
+    icon: 'vessel',
+    repo: 'https://github.com/TheZacillac/vessel',
+    comingSoon: true,
+  },
 ];
 ---
 
@@ -74,7 +86,7 @@ const projects = [
     <h2 class="section-title reveal">The Suite</h2>
     <hr class="section-rule reveal" />
     <p class="section-subtitle reveal">
-      Six projects, each with a distinct purpose, working in concert.
+      Seven projects, each with a distinct purpose, working in concert.
     </p>
 
     <div class="projects-grid">
@@ -160,7 +172,23 @@ const projects = [
                 <line x1="48" y1="24" x2="54" y2="24" stroke="currentColor" stroke-width="1" opacity="0.3" />
               </svg>
             )}
+            {project.icon === 'vessel' && (
+              <svg class="card-icon" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M22 12 L42 12 L46 20 L48 36 Q48 54 32 58 Q16 54 16 36 L18 20 Z" stroke="currentColor" stroke-width="1.5" fill="none" />
+                <line x1="18" y1="20" x2="46" y2="20" stroke="currentColor" stroke-width="1" opacity="0.5" />
+                <ellipse cx="32" cy="36" rx="8" ry="10" stroke="currentColor" stroke-width="0.8" opacity="0.4" />
+                <circle cx="32" cy="35" r="4" fill="currentColor" opacity="0.35" />
+                <line x1="32" y1="4" x2="32" y2="12" stroke="currentColor" stroke-width="1" opacity="0.3" />
+                <line x1="24" y1="6" x2="22" y2="12" stroke="currentColor" stroke-width="0.8" opacity="0.2" />
+                <line x1="40" y1="6" x2="42" y2="12" stroke="currentColor" stroke-width="0.8" opacity="0.2" />
+                <path d="M22 28 Q27 32 32 28 Q37 32 42 28" stroke="currentColor" stroke-width="0.5" opacity="0.25" />
+              </svg>
+            )}
           </div>
+
+          {project.comingSoon && (
+            <span class="card-coming-soon">Coming Soon</span>
+          )}
 
           <div class="card-content">
             <h3 class="card-name">{project.name}</h3>
@@ -430,6 +458,29 @@ const projects = [
 
   .project-card:hover .card-tech-badge {
     opacity: 1;
+  }
+
+  /* --- Coming Soon Badge --- */
+  .card-coming-soon {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    z-index: 2;
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 0.2rem 0.6rem;
+    color: var(--accent);
+    border: 1px solid var(--accent);
+    background: color-mix(in srgb, var(--accent) 10%, transparent);
+    box-shadow: 0 0 12px color-mix(in srgb, var(--accent) 20%, transparent);
+    animation: comingSoonPulse 3s ease-in-out infinite;
+  }
+
+  @keyframes comingSoonPulse {
+    0%, 100% { opacity: 0.8; }
+    50% { opacity: 1; box-shadow: 0 0 20px color-mix(in srgb, var(--accent) 35%, transparent); }
   }
 
   /* --- Responsive --- */

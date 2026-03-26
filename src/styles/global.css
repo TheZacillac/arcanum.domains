@@ -34,6 +34,7 @@
   --scrolls: #39ff14;
   --familiar: #ff2d95;
   --oracle: #ff8c00;
+  --vessel: #e63946;
 
   --font-display: 'Cinzel Decorative', serif;
   --font-heading: 'Cinzel', serif;
@@ -187,6 +188,7 @@ section {
 .reveal-delay-4 { transition-delay: 0.4s; }
 .reveal-delay-5 { transition-delay: 0.5s; }
 .reveal-delay-6 { transition-delay: 0.6s; }
+.reveal-delay-7 { transition-delay: 0.7s; }
 
 /* --- Keyframes --- */
 @keyframes fadeIn {
