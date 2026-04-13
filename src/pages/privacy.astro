@@ -1,0 +1,392 @@
+---
+// Grimoire Privacy Policy — standalone page with its own design
+---
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Grimoire — Privacy Policy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel+Decorative:wght@400;700&family=Crimson+Pro:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --ink: #1a1410;
+      --parchment: #f5efe3;
+      --parchment-dark: #ede3cf;
+      --gold: #b8922a;
+      --gold-light: #d4a94a;
+      --rust: #8b3a1e;
+      --shadow: rgba(26, 20, 16, 0.18);
+      --ornament: #7a5c2e;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background-color: #2a1f14;
+      background-image:
+        radial-gradient(ellipse at 20% 10%, rgba(90, 55, 20, 0.4) 0%, transparent 55%),
+        radial-gradient(ellipse at 80% 90%, rgba(60, 30, 10, 0.5) 0%, transparent 55%),
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23noise)' opacity='0.07'/%3E%3C/svg%3E");
+      min-height: 100vh;
+      padding: 3rem 1rem 5rem;
+      font-family: 'Crimson Pro', Georgia, serif;
+      color: var(--ink);
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+    }
+
+    .tome {
+      background-color: var(--parchment);
+      background-image:
+        url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3CfeColorMatrix type='saturate' values='0.3'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23p)' opacity='0.06'/%3E%3C/svg%3E"),
+        linear-gradient(160deg, var(--parchment) 0%, var(--parchment-dark) 100%);
+      max-width: 760px;
+      width: 100%;
+      border-radius: 2px;
+      padding: 4rem 4.5rem 5rem;
+      box-shadow:
+        0 0 0 1px rgba(184, 146, 42, 0.3),
+        0 0 0 4px rgba(122, 92, 46, 0.12),
+        8px 12px 40px rgba(0,0,0,0.55),
+        -4px -4px 20px rgba(0,0,0,0.3),
+        inset 0 0 60px rgba(180, 140, 80, 0.08);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .tome::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; bottom: 0;
+      width: 28px;
+      background: linear-gradient(to right, rgba(100, 65, 20, 0.22), transparent);
+      pointer-events: none;
+    }
+
+    .corner {
+      position: absolute;
+      width: 48px;
+      height: 48px;
+      opacity: 0.35;
+    }
+    .corner svg { width: 100%; height: 100%; }
+    .corner--tl { top: 14px; left: 14px; }
+    .corner--tr { top: 14px; right: 14px; transform: scaleX(-1); }
+    .corner--bl { bottom: 14px; left: 14px; transform: scaleY(-1); }
+    .corner--br { bottom: 14px; right: 14px; transform: scale(-1,-1); }
+
+    .header {
+      text-align: center;
+      margin-bottom: 2.8rem;
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(122, 92, 46, 0.3);
+      position: relative;
+    }
+
+    .sigil {
+      font-size: 2.4rem;
+      margin-bottom: 0.6rem;
+      opacity: 0.75;
+      filter: sepia(0.6);
+    }
+
+    h1 {
+      font-family: 'Cinzel Decorative', 'Palatino Linotype', serif;
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: var(--rust);
+      letter-spacing: 0.04em;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      text-shadow: 1px 1px 0 rgba(255,255,255,0.4);
+    }
+
+    .subtitle {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--ornament);
+      margin-top: 0.3rem;
+    }
+
+    .divider {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+      margin: 1.6rem 0;
+      opacity: 0.5;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: linear-gradient(to right, transparent, var(--gold), transparent);
+    }
+    .divider-glyph { color: var(--gold); font-size: 1rem; }
+
+    .effective-date {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--ornament);
+      text-align: center;
+      margin-bottom: 2.2rem;
+      opacity: 0.85;
+    }
+
+    .preamble {
+      font-size: 1.1rem;
+      line-height: 1.85;
+      color: #2e2318;
+      margin-bottom: 2.5rem;
+      padding: 1.4rem 1.8rem;
+      background: rgba(184, 146, 42, 0.06);
+      border-left: 3px solid var(--gold);
+      border-radius: 0 2px 2px 0;
+      font-style: italic;
+    }
+
+    section {
+      margin-bottom: 2.2rem;
+    }
+
+    h2 {
+      font-family: 'Cinzel Decorative', serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--rust);
+      margin-bottom: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 0.7rem;
+    }
+    h2 .rune { font-size: 1rem; opacity: 0.7; font-family: serif; }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.9;
+      color: #2e2318;
+      margin-bottom: 0.9rem;
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 1.2rem;
+      margin-bottom: 1rem;
+    }
+    ul li {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: #2e2318;
+      padding: 0.15rem 0;
+      padding-left: 1.2rem;
+      position: relative;
+    }
+    ul li::before {
+      content: '\29BF';
+      position: absolute;
+      left: 0;
+      color: var(--gold);
+      font-size: 0.65rem;
+      top: 0.42rem;
+      opacity: 0.7;
+    }
+
+    .contact-block {
+      margin-top: 2.8rem;
+      padding: 1.6rem 2rem;
+      background: rgba(122, 92, 46, 0.07);
+      border: 1px solid rgba(184, 146, 42, 0.25);
+      border-radius: 2px;
+      text-align: center;
+    }
+    .contact-block p {
+      font-size: 1rem;
+      margin-bottom: 0.3rem;
+    }
+    .contact-block a {
+      color: var(--rust);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--rust);
+      font-style: italic;
+    }
+    .contact-block a:hover { color: var(--gold); border-bottom-color: var(--gold); }
+
+    .footer-seal {
+      text-align: center;
+      margin-top: 3rem;
+      opacity: 0.35;
+      font-size: 1.6rem;
+      letter-spacing: 0.5rem;
+    }
+
+    @media (max-width: 600px) {
+      .tome { padding: 2.5rem 2rem 3.5rem; }
+      h1 { font-size: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<main class="tome">
+
+  <!-- Corner ornaments -->
+  <div class="corner corner--tl">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 44 L4 4 L44 4" stroke="#7a5c2e" stroke-width="1.5" fill="none"/>
+      <path d="M4 4 Q16 4 16 16" stroke="#b8922a" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="4" cy="4" r="2.5" fill="#b8922a" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="corner corner--tr">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 44 L4 4 L44 4" stroke="#7a5c2e" stroke-width="1.5" fill="none"/>
+      <path d="M4 4 Q16 4 16 16" stroke="#b8922a" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="4" cy="4" r="2.5" fill="#b8922a" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="corner corner--bl">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 44 L4 4 L44 4" stroke="#7a5c2e" stroke-width="1.5" fill="none"/>
+      <path d="M4 4 Q16 4 16 16" stroke="#b8922a" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="4" cy="4" r="2.5" fill="#b8922a" opacity="0.5"/>
+    </svg>
+  </div>
+  <div class="corner corner--br">
+    <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M4 44 L4 4 L44 4" stroke="#7a5c2e" stroke-width="1.5" fill="none"/>
+      <path d="M4 4 Q16 4 16 16" stroke="#b8922a" stroke-width="1" fill="none" opacity="0.6"/>
+      <circle cx="4" cy="4" r="2.5" fill="#b8922a" opacity="0.5"/>
+    </svg>
+  </div>
+
+  <header class="header">
+    <div class="sigil">📖</div>
+    <h1>Grimoire</h1>
+    <div class="subtitle">Privacy Policy</div>
+  </header>
+
+  <p class="effective-date">Effective Date: April 13, 2026 &nbsp;&middot;&nbsp; Last Updated: April 13, 2026</p>
+
+  <p class="preamble">
+    Grimoire is designed with your privacy as a first principle. We do not collect, store, transmit, or share any personal information about you. This document sets forth that commitment in full.
+  </p>
+
+  <div class="divider"><span class="divider-glyph">&#10022;</span></div>
+
+  <section>
+    <h2><span class="rune">&#8544;</span> Overview</h2>
+    <p>
+      This Privacy Policy applies to the Grimoire mobile application ("App") available on iOS and Android. By using Grimoire, you agree to the practices described here. Because we collect no personal data, there is very little to disclose — but we believe in full transparency nonetheless.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8545;</span> Information We Do Not Collect</h2>
+    <p>Grimoire does not collect, process, or transmit any of the following:</p>
+    <ul>
+      <li>Your name, email address, or any account credentials</li>
+      <li>Device identifiers, advertising IDs, or IP addresses</li>
+      <li>Location data of any kind</li>
+      <li>Usage analytics, crash reports, or behavioral telemetry</li>
+      <li>Any content you create, store, or interact with inside the App</li>
+      <li>Payment or financial information</li>
+    </ul>
+    <p>
+      No data ever leaves your device as a result of using Grimoire. We operate no servers that receive information from the App.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8546;</span> Data Stored on Your Device</h2>
+    <p>
+      Any content or settings you create within Grimoire are stored locally on your device only. This data is entirely under your control. Uninstalling the App will remove all locally stored data. We have no access to it at any time.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8547;</span> Third-Party Services</h2>
+    <p>
+      Grimoire does not integrate any third-party analytics platforms, advertising networks, crash-reporting services, or social SDKs. No third party receives data about you through use of this App.
+    </p>
+    <p>
+      The App is distributed through the Apple App Store and Google Play Store. Those platforms may collect certain information under their own privacy policies, which are independent of Grimoire and outside our control.
+    </p>
+    <p>
+      Your device's operating system may automatically back up locally stored app data to a cloud storage service — such as iCloud (Apple), Google Drive (Google), or OneDrive (Microsoft) — depending on your device settings. Any such backups are governed solely by the privacy policies of those respective services. We have no access to, and no control over, data stored in these backup services. If you wish to exclude Grimoire data from cloud backups, you may do so through your device's backup settings.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8548;</span> Children's Privacy</h2>
+    <p>
+      Grimoire does not knowingly collect personal information from anyone, including children under the age of 13 (or the applicable age of digital consent in your jurisdiction). Because we collect no data at all, Grimoire complies with COPPA, GDPR-K, and similar regulations by design.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8549;</span> Your Rights</h2>
+    <p>
+      Because we hold no personal data about you, there is nothing to access, correct, export, or delete on our end. All data associated with your use of Grimoire exists solely on your device, and you may remove it at any time by uninstalling the App or clearing its local storage through your device settings.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8550;</span> Changes to This Policy</h2>
+    <p>
+      We may update this Privacy Policy from time to time. If material changes are made, the updated policy will be published within the App and the "Last Updated" date at the top of this document will reflect the revision. Continued use of the App after any changes constitutes your acceptance of the updated policy.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8551;</span> Governing Law</h2>
+    <p>
+      This Privacy Policy is governed by and construed in accordance with applicable law. If you have questions about your rights under a specific regional framework (GDPR, CCPA, PIPEDA, or otherwise), please contact us and we will do our best to assist you.
+    </p>
+  </section>
+
+  <section>
+    <h2><span class="rune">&#8552;</span> Domain Lookups &amp; Portfolio Data</h2>
+    <p>
+      Grimoire allows you to perform domain lookups using publicly available RDAP (Registration Data Access Protocol) and WHOIS services. When you submit a domain name query, that domain name is transmitted from your device to public RDAP/WHOIS servers operated by domain registries and registrars. These services are independent of Grimoire and are governed by their own terms and privacy policies. We do not operate or control these servers.
+    </p>
+    <p>
+      Lookup results are held in memory only for the duration of your session with that result. They are never written to disk and are discarded immediately when you dismiss the result or navigate away.
+    </p>
+    <p>
+      If you explicitly choose to add a domain to your Portfolio or Watchlist, a defined subset of RDAP data is saved to your device's local storage via SwiftData. This action is always user-initiated — Grimoire never saves lookup results without your deliberate instruction. The fields stored are limited to:
+    </p>
+    <ul>
+      <li>Registrar name</li>
+      <li>Registration and expiry dates</li>
+      <li>Nameservers</li>
+      <li>Status codes</li>
+      <li>Date of last RDAP check</li>
+      <li>Raw RDAP response data</li>
+    </ul>
+    <p>
+      If you have iCloud backup or iCloud Drive sync enabled on your device, SwiftData content — including saved Portfolio and Watchlist data — may be synced to your iCloud account via Apple CloudKit. This sync occurs between your own devices and within your own Apple ID account. Grimoire has no access to your iCloud account and does not receive or store a copy of this data. iCloud sync is governed by <a href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener noreferrer">Apple's Privacy Policy</a>.
+    </p>
+    <p>
+      RDAP and WHOIS records may contain registrant contact information published by domain registrars in accordance with ICANN policy. Grimoire displays this data as returned by public registry services and does not independently collect, enrich, or retain registrant personal information beyond what you choose to save to your Portfolio or Watchlist.
+    </p>
+  </section>
+
+  <div class="divider"><span class="divider-glyph">&#10022;</span></div>
+
+  <div class="contact-block">
+    <p>Questions, concerns, or correspondence regarding this Policy may be directed to:</p>
+    <p style="margin-top: 0.6rem;"><strong>Zac</strong></p>
+    <p><a href="mailto:dev@arcanum.domains">dev@arcanum.domains</a></p>
+  </div>
+
+  <div class="footer-seal">⊹ ⊹ ⊹</div>
+
+</main>
+
+</body>
+</html>
